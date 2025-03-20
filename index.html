@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- Bootstrap CSS -->
+        <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-Vkoo8×4CGsO3+Hhxv8T/1CRr0gs+pZB1F6A5y5nTn4jBuV/JN8A5w5Y5e5m5E5e5" 
+        crossorigin="anonymous">
+
+    <title>The-Book Showcase Platform-Ultimate collections for all readers</title>
+
+    <style type="text/css">
+        /* Reset padding and margin */
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        
+        /* Container fluid styling */
+        .container-fluid{
+            padding: 0%;
+            margin: 0%;
+        }
+        
+        /* Background styling */
+        .background{
+            background-image: url(public/images/book-background.img.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            height: 100vh; 
+            margin: 0;
+            z-index: 1;
+        }
+        
+        /* Opacity layer styling */
+        .opacity{
+            background-color: rgb(0, 0, 0,0.5);
+            height: 100vh; 
+            z-index: 2;
+        }
+        
+        /* Home button hover effect */
+        #home:hover{
+            cursor: pointer;
+        }
+        
+        /* Cover styling */
+        .cover{
+            width: 100vw;
+        }
+        
+        /* List item margin */
+        li{
+            margin-top: 1%;
+        }
+        
+        /* Side image styling */
+        #sideimg{
+            background-image: url(public/images/sideviewbook-croped-img.JPG);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100%;
+        }
+        
+        /* Main container for book cards */
+        .maincontainer{
+            position: relative;
+            width: 250px;
+            height: 350px;
+            margin: 20px auto; 
+        }
+        
+        /* Container for 3D effect */
+        .container{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            transform-style: preserve-3d;
+            transition: all 0.5 ease;
+        }
+        
+        /* Front side of the card */
+        .front{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 4%;
+            box-shadow: 10px 10px 20px 4px rgb(21, 16, 16);
+        }
+        
+        /* Back side of the card */
+        .back{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+            background-color: rgba(241, 237, 241, 0.932);
+            transform: rotateY(180deg);
+            border-radius: 4%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Card hover effect */
+        .container:hover{
+            transform: rotateY(180deg);
+            transition: 1.3s;
+            cursor: pointer;
+        }
+        
+        /* Remove link decoration */
+        a{
+            text-decoration: none;
+        }
+        
+        /* Responsive Grid for Book Cards */
+        .cardcontainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        /* Responsive adjustments for introduction section */
+        #introWhyus .grid {
+            display: grid;
+            grid-template-columns: 1fr; 
+        }
+        
+        @media (min-width: 768px) {
+            #introWhyus .grid {
+                grid-template-columns: 6fr 6fr; 
+            }
+        }
+        
+        
+        header div a button {
+            margin: 5px;
+        }
+        
+        /* Responsive main content */
+        main {
+            height: auto;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        main nav a {
+            margin-top: 20px;
+        }
+        
+        /* Responsive footer */
+        footer {
+            padding: 10px;
+        }
+
+        /* Introduction section height and width adjustments */
+        #introWhyus {
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <!-- Background section with opacity layer -->
+    <div class="background">
+        <div class="opacity">
+            <!-- Header section -->
+            <header class="d-flex flex-column flex-md-row justify-content-between align-items-center p-3 fs-4" style="font-family: Georgia, 'Times New Roman', Times, serif; z-index: 3;">
+                <span style="color: rgb(235, 212, 183);" class="fs-2">BookAura.</span>
+                <div class="d-flex flex-column flex-md-row align-items-center">
+                    <a href=""> <button type="button" class="btn btn-outline-warning mt-0 mb-md-0" id="home">Home</button> </a>
+                    <a href="#bookchoice"><button type="button" class="btn btn-outline-warning">Books</button> 
+                    </a>
+                </div>
+            </header>
+            
+            <!-- Main content section -->
+            <main>
+                <div>
+                    <p style="color: rgb(235, 215, 189); font-family: Georgia, 'Times New Roman', Times, serif;" class="fs-1">
+                        Turn the page to something new <br>
+                        <span class="fs-2">your next read is just a click away!</span>
+                        <br><br>
+                    </p>
+                </div>
+                <nav>
+                    <a href="#introWhyus" class="btn btn-danger p-3 ps-5 pe-5">
+                        <span class="fw-bold">Get Started</span> &nbsp;<span class="bi bi-arrow-down-circle-fill"></span>
+                    </a>
+                </nav>
+            </main>
+        </div>
+    </div>
+    
+    <!-- Introduction section -->
+    <section id="introWhyus" class="cover" style="background-color: rgb(196, 163, 121);">
+        <div class="fs-1 ms-md-5 mt-5 p-5" style="color: rgb(21, 19, 19); font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            Why Choose Us?
+        </div>
+        <div class="grid">
+            <div class="ms-md-5 list">
+                <ul class="fs-5 fw-bold">
+                    <li>Curated Selection</li>
+                    <li>Personalized Recommendations</li>
+                    <li>Easy Navigation</li>
+                    <li>Expert Reviews</li>
+                </ul>
+                <p style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">We offer recommendations across all categories with personalized suggestions from fellow readers. <br> Each book includes ratings and reviews to help you make informed choices. <br> We ensure the content is highly relevant to your preferences, providing a tailored experience for every customer.</p>
+            </div>
+            <div id="sideimg"></div>
+        </div>
+    </section>
+
+    <!-- Book choice section -->
+    <section id="bookchoice" style="background-color: rgb(150, 73, 73);" class="cover">
+        <header>
+            <div class="d-flex justify-content-center me-4 mt-3">
+                <a href="#home"> <button type="button" class="btn btn-dark">Home</button> </a>
+            </div>
+        </header>
+        <main class="cardcontainer">
+            <!-- Book card 1 -->
+            <div class="maincontainer">
+                <div class="container">
+                    <div class="front" style="background-image: url(public/images/atmomichabits-book1.jpg);"></div>
+                    <div class="back"><a href="book1info.html"> <button class="btn btn-warning">click here</button></a></div>
+                </div>
+            </div>
+            <!-- Book card 2 -->
+            <div class="maincontainer">
+                <div class="container">
+                    <div class="front" style="background-image: url(public/images/book2-img.jpg);"></div>
+                    <div class="back"><a href="book2info.html"><button class="btn btn-warning">click here</button></a></div>
+                </div>
+            </div>
+            <!-- Book card 3 -->
+            <div class="maincontainer">
+                <div class="container">
+                    <div class="front" style="background-image: url(public/images/sciencebook1.jpeg);"></div>
+                    <div class="back"><a href="book3info.html"><button class="btn btn-warning">click here</button></a></div>
+                </div>
+            </div>
+        </main>
+    </section>
+    
+    <!-- Footer section -->
+    <footer class="bg-dark text-light text-center p-2">
+        <p>&copy; 2023 BookAura | All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS Bundle  -->
+        <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-rmNleHIf+dGQ9kYw5lM5t5K5t5X5X5L5L5L5M5M5M5M5M5M5M5M5M5M5M5" 
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
